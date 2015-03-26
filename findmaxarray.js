@@ -1,4 +1,8 @@
-var goodArray = [-1, -1, 0, -12];
+// Challenge: Build a function findMax() which takes an array and 
+// returns the maximum number.
+
+
+var goodArray = [-1, -1, 0, -12, 3, 6, 6, 31];
 
 function findMax (myArray) {
     var subArray, i, j, solution;
@@ -25,4 +29,4 @@ function findMax (myArray) {
     return solution;
 }
 
-console.log(findMax(goodArray));
+console.log(findMax(goodArray)); // 31
