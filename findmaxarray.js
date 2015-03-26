@@ -1,4 +1,4 @@
-var goodArray = [-2, 4, 0, 20, 40, -40, 125, 5.5, -60];
+var goodArray = [-1, -1, 0, -12];
 
 function findMax (myArray) {
     var subArray, i, j, solution;
@@ -7,7 +7,7 @@ function findMax (myArray) {
     }
     maxTest:
     for (i=0; i<myArray.length; i++) {
-        subArray = removeElement(myArray, i);
+        subArray = removeElement(myArray, myArray[i]);
         if (subArray.length === 0) { // all values in myArray are equal so they're all max
             solution = myArray[0];
             break;
