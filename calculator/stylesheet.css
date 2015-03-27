@@ -1,0 +1,80 @@
+.button {
+	float: left;
+	/* width: 25px;
+	height: 25px; */
+	margin: 3px;
+    padding: 10px;
+	border: solid 1px;
+	background-color: #55aaff;
+	border-radius: 5px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.operator {
+	background-color: #33ccff;
+}
+
+.wrapper {
+	float: left;
+	clear: both;
+	width: 150px;
+	height: 35px;
+	margin: 3px;
+	padding: 5px;
+	clear: both;
+}
+
+#zero {
+	padding-left: 18px;
+	padding-right: 18px;
+}
+
+#minus {
+	/* padding-left: 0px; */
+	padding-right: 4px;
+}
+
+#divide {
+	/* padding-left: 0px; */
+	padding-right: 4px;
+}
+
+#CLR p {
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+#point p {
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+p {
+	margin: 0px;
+}
+
+#keyboard_wrap {
+	float: left;
+	width: 150px;
+	padding: 10px;
+	margin: 5px;
+}
+
+#console {
+	float: left;
+	margin-top: 25px;
+	padding: 10px;
+	background-color: #d6b6b6;
+	border: solid 2px;
+	border-radius: 5px;
+}
+
+#output {
+	font-family: Lucida;
+	font-size: 14px;
+	width: 150px;
+	margin-top: 10px;
+}
