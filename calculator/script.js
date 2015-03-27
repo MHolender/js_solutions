@@ -5,7 +5,7 @@ var buttons = document.getElementsByClassName("button");
 
 function display() {
 	calcConsole.innerHTML = catInput;
-};
+}
 
 function buttonInput(string) {
 	catInput = catInput + string;
@@ -25,7 +25,7 @@ function clearAll () {
 function convert(equation) {
 	var i;
 	for (i=0; i<equation.length; i++) {
-		if (parseFloat(equation[i] !== NaN)) {
+		if (!isNaN(parseFloat(equation[i]))) {
 			equation[i] = parseFloat(equation[i]);
 		}
 	}
@@ -38,18 +38,20 @@ function multDiv(equation) {
 		
 		if (equation[i] === 'x') {
 			subProb = equation[i-1] * equation[i+1];
-			if (subProb === NaN) {
+			if (isNaN(subProb)) {
 				return false;
 			}
-			equation.splice(i-1, 3, subProb)
+			equation.splice(i-1, 3, subProb);
+			equation = multDiv(equation);
 		}
 		
 		if (equation[i] === '/') {
 			subProb = equation[i-1] / equation[i+1];
-			if (subProb === NaN) {
+			if (isNaN(subProb)) {
 				return false;
 			}
-			equation.splice(i-1, 3, subProb)
+			equation.splice(i-1, 3, subProb);
+			equation = multDiv(equation);
 		}
 	}
 	
@@ -62,18 +64,20 @@ function addSub(equation) {
 		
 		if (equation[i] === '+') {
 			subProb = equation[i-1] + equation[i+1];
-			if (subProb === NaN) {
+			if (isNaN(subProb)) {
 				return false;
 			}
-			equation.splice(i-1, 3, subProb)
+			equation.splice(i-1, 3, subProb);
+			equation = addSub(equation);
 		}
 		
 		if (equation[i] === '-') {
 			subProb = equation[i-1] - equation[i+1];
-			if (subProb === NaN) {
+			if (isNaN(subProb)) {
 				return false;
 			}
-			equation.splice(i-1, 3, subProb)
+			equation.splice(i-1, 3, subProb);
+			equation = addSub(equation);
 		}
 	}
 	
@@ -90,9 +94,9 @@ function solve () {
 	}
 	
 	function displaySolution(num) {
-		var msgP;		
+		var msgP, solutionMsg;		
 		msgP = document.createElement("P");
-		solutionMsg = document.getElementById("console").appendChild(msgP)
+		solutionMsg = document.getElementById("console").appendChild(msgP);
 		solutionMsg.innerHTML = "Solution: " + catInput + " = " + num;
 		clearAll();
 	}
