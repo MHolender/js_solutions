@@ -13,8 +13,16 @@ function buttonInput(string) {
 }
 
 function clearAll () {
-	catInput = '';
-	display();
+	var solutions, i;
+	if (catInput) {
+		catInput = '';
+		display();
+	} else {
+		solutions = document.getElementById("console").getElementsByTagName("P");
+		for (i=solutions.length-1; i>=1 /*keep output P*/ ; i--) {
+			document.getElementById("console").removeChild(solutions[i]);
+		}
+	}
 }
 
 // The mantra is "eval is evil" but I wonder if it wouldn't have been
