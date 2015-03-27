@@ -72,9 +72,15 @@ p {
 	border-radius: 5px;
 }
 
-#output {
+#console h3 {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+#console p {
 	font-family: Lucida;
 	font-size: 14px;
 	width: 150px;
 	margin-top: 10px;
+	margin-bottom: 5px;
 }
